@@ -20,7 +20,7 @@ const Aboutus = () => {
                         <h2>imagery.</h2>
                     </Hide>
                 </div>
-                <p>Contact us for any photography or videography ideas that you have. We have professionals with amazing skills</p>
+                <p>Contact us for any photography or videography events that you have. We have professionals with amazing skills</p>
                 <button>Contact Us</button>    
             </Description>
             <Image>
