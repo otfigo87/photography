@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const Nav = () => {
     return (
         <StyledNav>
-            <h1><Link id="logo" to="/">Photography</Link></h1>
+            <h1><Link id="logo" to="/">Memories</Link></h1>
             <ul>
                 <li>
                     <Link to="/">1. About Us</Link>
@@ -27,7 +27,7 @@ const StyledNav = styled.nav`
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 10rem;
+  padding: 1rem 3rem;
   background-color: #282828;
   a {
       color: white;
@@ -38,13 +38,18 @@ const StyledNav = styled.nav`
       list-style: none;
   }
  #logo {
-      font-family: "Lobster", cursive;
-      font-size: 1.6rem;
+      font-family: 'Comforter Brush', cursive;
+      font-size: 2rem;
       font-weight: lighter; 
+      margin-left: 0;
   }
   li{
       padding-left: 10rem;
+      font-family: 'Oswald', sans-serif;
       //position: relative;
+  }
+  a:hover{
+      color: #e1ce3f;
   }
 `;
 

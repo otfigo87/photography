@@ -44,7 +44,7 @@ const Faq = () => {
 const StyledFaq = styled.div`
   min-height: 90vh;
   display: block;
-  padding: 5rem 10rem;
+  padding: 5rem 5rem;
   color: white;
   h2{
     padding-bottom: 2rem;
@@ -53,7 +53,7 @@ const StyledFaq = styled.div`
 .faq-line{
     background: #cccccc;
     height: 0.2rem;
-    width: 100%auto;
+    width: 100% auto;
 }
 span{
     display: block;
@@ -70,4 +70,4 @@ span{
 }
 `;
 
-export default Faq
+export default Faq;

@@ -11,11 +11,14 @@ body{
 }
 h2{
     font-weight: lighter;
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
+    font-family: 'Shippori Antique', sans-serif;
+    
 }
 h3{
     color: white;
+    font-size: 1rem;
 }
 h4{
     font-weight: bold;
@@ -33,6 +36,7 @@ p{
     color: #ccc;
     font-size: 1.4rem;
     line-height: 150%;
+    font-family: 'Shippori Antique', sans-serif;
 }
 button{
     font-weight: bold;
@@ -40,15 +44,18 @@ button{
     cursor: pointer;
     padding: 1rem 2rem;
     border: 3px solid #e1ce3f;
+    border-radius: 20%;
     background: transparent;
     color: white;
-    font-family: sans-serif;
+    font-family: 'Oswald', sans-serif;
     transition: all 0.5s ease;
     &:hover{
         background-color: #f0d185;
         color: black;
     } 
-}    
+} .link {
+    text-decoration: none;
+}  
 `;
 
 export default GlobalStyle;

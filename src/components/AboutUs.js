@@ -1,5 +1,5 @@
 import React from 'react';
-import home1 from '../images/home1.png';
+import home from '../images/home.jpg';
 import styled from 'styled-components';
 
 const Aboutus = () => {
@@ -20,11 +20,11 @@ const Aboutus = () => {
                         <h2>imagery.</h2>
                     </Hide>
                 </div>
-                <p>Contact us for any photography or videography events that you have. We have professionals with amazing skills</p>
+                <p>Contact us for any photography or videography events that you have. We have professionals with amazing skills.</p>
                 <button>Contact Us</button>    
             </Description>
             <Image>
-                    <img src={home1} alt="guy with a camera"/>
+                    <img src={home} alt="guy with a camera"/>
             </Image>
             
         </About>
@@ -36,7 +36,7 @@ const About = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 10rem;
+  padding: 5rem 5rem;
   color: white;
 `;
 const Description = styled.div`
