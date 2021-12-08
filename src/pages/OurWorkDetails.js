@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { OurWorkState } from '../OurWorkState';
 import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { pageAnimation } from '../animation';
 
 
 const OurWorkDetails = () => {
@@ -18,7 +20,7 @@ const OurWorkDetails = () => {
     return (
         <>
             {work && (
-            <DetailPage>
+            <DetailPage variants={pageAnimation} initial="hidden" animate="show" exit="exit">
                  <div>
                     <h2>{work.title}</h2> 
                     <p>{work.text1}</p>
@@ -40,7 +42,7 @@ const OurWorkDetails = () => {
     )
 };
 
-const DetailPage = styled.div`
+const DetailPage = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem; 

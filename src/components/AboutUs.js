@@ -1,30 +1,32 @@
 import React from 'react';
 import home from '../images/home.jpg';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { titleAnimation, fade, photoAnimation } from '../animation';
 
 const Aboutus = () => {
     return (
         <About>
             <Description>
-                <div>
+                <motion.div>
                     <Hide>
-                        <h2>Telling your story</h2>
+                        <motion.h2 variants={titleAnimation}>Telling your story</motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>through <span>Beautiful</span></h2>
+                        <motion.h2 variants={titleAnimation}>through <span>Beautiful</span></motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>& <span>Meaningful</span></h2>
+                        <motion.h2 variants={titleAnimation}>& <span>Meaningful</span></motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>imagery.</h2>
+                        <motion.h2 variants={titleAnimation}>imagery.</motion.h2>
                     </Hide>
-                </div>
-                <p>Contact us for any photography or videography events that you have. We have professionals with amazing skills.</p>
-                <button>Contact Us</button>    
+                </motion.div>
+                <motion.p variants={fade}>Contact us for any photography or videography events that you have. We have professionals with amazing skills.</motion.p>
+                <motion.button variants={fade}>Contact Us</motion.button>    
             </Description>
             <Image>
-                    <img src={home} alt="guy with a camera"/>
+                    <motion.img variants={photoAnimation } src={home} alt="guy with a camera"/>
             </Image>
             
         </About>

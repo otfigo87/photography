@@ -6,15 +6,25 @@ import family from '../images/family.jpg';
 import event from '../images/events.jpg';
 import portrait from '../images/portrait.jpg';
 import business from '../images/business9.jpg';
+import mypic from '../images/mypic2.jpg';
+import { motion } from 'framer-motion';
+import { pageAnimation, fade, photoAnimation } from '../animation';
 
 
 const Ourwork = () => {
     return (
-        <WorkList>
-            <p>Our lives are full of love and adventure. Whether thats planning for your wedding, capturing memories of your family, or capturing your personality to promote you, your photos should be a celebration of who you are.
-            <br/>Take a look around our site and feel free to snoop around our Instagram feed. It’ll give you a good idea of who we are and what makes us tick. Looking forward to crossing paths and hearing your story!
-                {' '}   <a className="btn btn-social-icon btn-adn" href="http://instagram.com/"><i className="fa fa-instagram" /></a>
-            </p><br/>
+        <WorkList variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+            <Head>
+                <div>
+                    <motion.p variants={fade}>Our lives are full of love and adventure. Whether thats planning for your wedding, capturing memories of your family, or capturing your personality to promote you, your photos should be a celebration of who you are.
+                    <br/>Take a look around our site and feel free to snoop around our Instagram feed. It’ll give you a good idea of who we are and what makes us tick. Looking forward to crossing paths and hearing your story!
+                        {' '}   <a className="btn btn-social-icon btn-adn" href="http://instagram.com/"><i className="fa fa-instagram" /></a>
+                        {' '}   <a className="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i className="fa fa-facebook" /></a>
+                        {' '}   <a className="btn btn-social-icon btn-pinterest" href="http://youtube.com/"><i className="fa fa-youtube" /></a>
+                    </motion.p>
+                </div>
+                <motion.img variants={photoAnimation} src={mypic} alt="photographer"/>
+            </Head>
             <Work>
                 <Link className="link" to="/ourwork/weddings"><h2>Weddings</h2></Link>
                 <p>WEDDING PHOTOGRAPHY AND FILMS THAT CAPTURE YOUR STORY THE WAY YOU LIVED IT.</p>
@@ -60,7 +70,7 @@ const Ourwork = () => {
     )
 }
 
-const WorkList = styled.div`
+const WorkList = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 2rem 5rem;
@@ -70,6 +80,15 @@ const WorkList = styled.div`
     margin-right: auto;
     border-radius: 20%;
   }
+  p{
+      font-family: 'Estonia', cursive;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      line-height: 125%;
+      display: inline-block;
+      vertical-align: middle;
+  }
   h2{
       padding: 0rem 0rem;
       font-family: 'Estonia', cursive;
@@ -77,27 +96,28 @@ const WorkList = styled.div`
       color: #f5d291;
       text-decoration: underline;
   }
-  p{
-      font-family: 'Estonia', cursive;
-      font-size: 2.5rem;
-      font-weight: 800;
-      padding: 0;
-      margin-bottom: 2rem;
-  }
 `;
 const Work = styled.div`
   padding-bottom: 3rem;
   img{
       width: 100%;
-      height: 70vh;
-      
+      height: 70vh;  
   }
   .line{
       height: 0.2rem;
       background: #cccccc;
       margin-bottom: 3rem;
   }
-  
+`;
+const Head = styled.div`
+  display: grid;
+  grid-template-columns: 65% 35%;
+  grid-gap: 1rem;
+  img{
+      width: 100%;
+      height: 450px;
+      border-radius: 10px;
+  }
 `;
 
 export default Ourwork
