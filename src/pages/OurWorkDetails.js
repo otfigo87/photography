@@ -66,6 +66,7 @@ const ImagesContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 2%;
+    cursor: pointer;
   }
 `;
 
