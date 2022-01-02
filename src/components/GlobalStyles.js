@@ -55,7 +55,15 @@ button{
     } 
 } .link {
     text-decoration: none;
-}  
+} 
+html{
+    @media (max-width: 1100px){
+        font-size: 75%;
+    }
+    @media (max-width: 700px){
+        display: block;
+    }
+} 
 `;
 
 export default GlobalStyle;

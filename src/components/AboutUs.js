@@ -40,6 +40,13 @@ const About = styled.div`
   justify-content: space-between;
   padding: 5rem 5rem;
   color: white;
+  @media (max-width: 700px){
+        display: block;
+        text-align: center;
+        img {
+          margin-top: 2rem;
+        }
+    }
 `;
 const Description = styled.div`
   flex: 1;

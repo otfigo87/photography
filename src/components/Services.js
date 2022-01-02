@@ -44,7 +44,7 @@ const Services = () => {
                         <div className="icon">
                             <img src={money} alt="money" />
                             <h3>Affordable</h3>
-                            <p>Fixed prices from just $89..</p>
+                            <p>Fixed prices from just $89.</p>
                         </div>
                         
                     </Card>
@@ -60,6 +60,12 @@ const StyledServices = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 2rem 5rem;
+  @media (max-width: 700px){
+        display: block;
+        img {
+            margin-top: 3rem;
+        }
+    }
   h3{
           background: white;
           color: black;

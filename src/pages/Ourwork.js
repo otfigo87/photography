@@ -99,6 +99,9 @@ const WorkList = styled(motion.div)`
 `;
 const Work = styled.div`
   padding-bottom: 3rem;
+  p{
+      margin: 0;
+  }
   img{
       width: 100%;
       height: 70vh;  
@@ -106,7 +109,7 @@ const Work = styled.div`
   .line{
       height: 0.2rem;
       background: #cccccc;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
   }
 `;
 const Head = styled.div`
@@ -117,6 +120,12 @@ const Head = styled.div`
       width: 100%;
       height: 450px;
       border-radius: 10px;
+  }
+  @media (max-width: 700px) {
+      display: block;
+      img{
+          display: none;
+      }
   }
 `;
 

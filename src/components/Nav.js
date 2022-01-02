@@ -51,6 +51,16 @@ const StyledNav = styled.nav`
   a:hover{
       color: #e1ce3f;
   }
+  @media (max-width: 1000px){
+      flex-direction: column;
+      ul{
+          justify-content: space-around;
+          width: 100%;
+      }
+      li{
+          padding: 0;
+      }
+  }
 `;
 
 export default Nav;
