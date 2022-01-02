@@ -1,10 +1,52 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { motion } from 'framer-motion';
 import { pageAnimation, titleAnimation, fade } from '../animation';
 import styled from 'styled-components';
-import { Form } from 'react-bootstrap';
+import  Container from 'react-bootstrap/Container';
+import  Form from 'react-bootstrap/Form';
+import {FormFeedback} from 'reactstrap';
+
 
 const Contactus = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [event, setEvent] = useState('');
+    const [message, setMessage] = useState('');
+    const [touched, setTouched] = useState({
+                                    name: false,
+                                    email: false,
+                                    event: false,
+                                    message: false });
+
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    };
+    const handleBlur = (field) => {
+        setTouched({...touched, field: true})
+    }
+
+    const validate = (name, email) => {
+
+        const errors = {
+            name: '',
+            email: ''
+        };
+
+        if (touched.name) {
+            if (name.length < 2) {
+                errors.name = 'Name must be at least 2 characters.';
+            } else if (name.length > 15) {
+                errors.name = 'Name must be 15 or less characters.';
+            }
+        }
+        if (touched.email && !email.includes('@')) {
+            errors.email = 'Email should contain a @.';
+        }
+        return errors;
+    }
+    const errors = validate(name, email);
+
     return (
         <ContactStyle variants={pageAnimation} initial="hidden" animate="show" exit="exit">
             <Title>
@@ -30,41 +72,59 @@ const Contactus = () => {
                     </Social>
                 </Hide>
             </div>
-            <ContactForm>
-                <Form.Control size="lg" type="text" placeholder="Name" />
-                <br />
-                <Form.Control size="lg" type="text" placeholder="Phone Number" />
-                <br />
-                <Form.Control size="lg" type="text" placeholder="Email" />
-                <br />
-                <Form.Select size="lg">
-                    <option>Select your event</option>
-                    <option value="wedding">Wedding</option>
-                    <option value="graduation">Graduation</option>
-                    <option value="portrait">Portrait</option>
-                    <option value="family">Family</option>
-                    <option value="commercial">Commercial</option>
-                </Form.Select>
-                <br />
-                <Form.Control size="lg" as="textarea" rows={3} type="text" placeholder="Message" />
-            </ContactForm>
-             <ContactButton variants={fade}> Send </ContactButton> 
-        </ContactStyle>   
+            <motion.div variants={fade}>
+                <Container>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlId="formFirstName">
+                            <Form.Label class="text-secondary mb-2 mt-2">Full Name</Form.Label>
+                            <Form.Control type="text" placeholder="Enter name" id="name" name="name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                onBlur={() => handleBlur(name)}
+                               invalid={errors.name}
+                            />
+                            <FormFeedback>{errors.name}</FormFeedback>
+                        </Form.Group>
+                        <Form.Group controlId="form.Email">
+                            <Form.Label class="text-secondary mb-2 mt-2">Email address</Form.Label>
+                            <Form.Control type="email" placeholder="name@example.com" id="email" name="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                onBlur={() => handleBlur("email")}
+                                invalid={errors.email}                            
+                            />
+                            <FormFeedback>{errors.email}</FormFeedback>
+                        </Form.Group>
+                        <Form.Group controlId="form.Event">
+                            <Form.Label class="text-secondary mb-2 mt-2">Event</Form.Label>
+                            <Form.Control as="select" id="event" name="event"
+                                value={event}
+                                onChange={(e) => setEvent(e.target.value)}
+                            >
+                                <option>Wedding</option>
+                                <option>Graduation</option>
+                                <option>Portrait</option>
+                                <option>Family</option>
+                                <option>Business</option>
+                                <option>Other</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId="form.Textarea">
+                            <Form.Label class="text-secondary mb-2 mt-2">Message</Form.Label>
+                            <Form.Control as="textarea" rows={3} id="message" name="message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                onBlur={() => handleBlur("message")}
+                            />
+                        </Form.Group>
+                    </Form>
+                    <SendBtn type="submit">Send</SendBtn>
+                </Container>
+            </motion.div>
+            </ContactStyle>
+            
     )
-}
-
-const ContactButton = styled(motion.button)`
-    margin-top: 1rem;
-    padding: 0.5rem;
-    width: 30%;
-    border-radius: 0;
-    background-color: #f0d185;
-    color: black;
-    &:hover{
-        background-color: transparent;
-        color: white;
-    } 
-`
+};
 
 const ContactStyle = styled(motion.div)`
     padding: 2rem 5rem;
@@ -93,8 +153,11 @@ const Social = styled(motion.div)`
         font-size: 1.7rem;
     }
 `;
-const ContactForm = styled.div`
-    margin-top: 3rem;
+const SendBtn = styled.button`
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 1.4rem;
 `
+
 
 export default Contactus

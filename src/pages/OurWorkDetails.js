@@ -26,15 +26,15 @@ const OurWorkDetails = () => {
                     <p>{work.text1}</p>
                  </div>
                  <ImagesContainer>
-                        <img src={work.image1} alt="work1"/>
-                        <img src={work.image2} alt="work2"/>
-                        <img src={work.image3} alt="work3"/>
-                        <img src={work.image4} alt="work4"/>
-                        <img src={work.image5} alt="work5"/>
-                        <img src={work.image6} alt="work6"/>
-                        <img src={work.image7} alt="work8"/>
-                        <img src={work.image8} alt="work7"/>
-                        <img src={work.image9} alt="work9"/>
+                        <motion.img src={work.image1} alt="work1" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image2} alt="work2" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image3} alt="work3" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image4} alt="work4" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image5} alt="work5" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image6} alt="work6" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image7} alt="work8" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image8} alt="work7" whileHover={{scale:1.1}}/>
+                        <motion.img src={work.image9} alt="work9" whileHover={{scale:1.1}}/>
                </ImagesContainer>
             </DetailPage>
             )}   
@@ -58,7 +58,7 @@ const DetailPage = styled(motion.div)`
   
   }
 `;
-const ImagesContainer = styled.div`
+const ImagesContainer = styled(motion.div)`
    display: grid;
    grid-template-columns: 30% 30% 30%;
    grid-gap: 0.5rem;
