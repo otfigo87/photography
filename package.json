@@ -46,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/otfigo87/photography.git",
+  "author": "Otmane Aatik <aaotmane@gmail.com>",
+  "license": "MIT"
 }

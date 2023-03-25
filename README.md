@@ -1,3 +1,10 @@
+
+![ScreenShot](./public/screenShots/Screenshot1.png)
+![ScreenShot](./public/screenShots/Screenshot2.png)
+![ScreenShot](./public/screenShots/Screenshot3.png)
+![ScreenShot](./public/screenShots/Screenshot4.png)
+![ScreenShot](./public/screenShots/Screenshot5.png)
+![ScreenShot](./public/screenShots/Screenshot6.png)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
